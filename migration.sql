@@ -13,4 +13,4 @@ CREATE TABLE journal (
     userID INTEGER,
     JournalID SERIAL PRIMARY KEY
 
-)
+);
