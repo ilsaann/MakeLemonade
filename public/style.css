@@ -60,8 +60,18 @@ form {
 .col-100 {
     padding: 2em;
     display:flex;
-    flex-flow:column;
+    flex-flow:wrap;
     width: calc(100% - 30px);
+}
+.leftstuff{
+    width:40%;
+    border-style:solid;
+    margin:2em;
+}
+.displayQuote {
+    width:40%;
+    margin: 2em;
+    border-style:solid;
 }
 
 .card {
@@ -72,11 +82,12 @@ form {
     border-color: rgb(1, 71, 48);
 }
 
-/* applying font */
+/* applying font and font styling*/
 h1, h3, h4, button {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
 }
+
 h4 {
     color:rgb(1, 71, 48);
     text-shadow: 1px 1px 1px #f9ea98;
@@ -85,6 +96,7 @@ h4 {
     background-color:#f9f2c9;
     opacity: .8;
 }
+
 h1 {
     color:rgb(1, 71, 48);
     text-shadow: 2px 2px 1px #f9ea98;
@@ -93,9 +105,29 @@ h1 {
     background-color:#f9f2c9;
     opacity: .8;
 }
+
 p, form {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
+}
+
+/* changing the buttons up */
+
+button{
+    background:rgb(1, 71, 48);
+    color:#f9f2c9;
+    border-radius: 4px;
+}
+
+.squeeze{
+    background:rgb(1, 71, 48);
+    color:#f9f2c9;
+    border-radius: 4px;
+}
+
+footer {
+    display:flex;
+    justify-content:center;
 }
 
 @media screen and (max-width: 800px){

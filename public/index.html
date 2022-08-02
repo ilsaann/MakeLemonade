@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script defer src="/app.js"></script>
     <title>MakeLemonade</title>
 </head>
 <body>
@@ -16,16 +19,21 @@
 
         <div class="columns">
             <div class="col col-100">
-                <button class="getQoute">Add Sugar</button><br>
-                <form class="entry"> 
-                    Squeeze some thoughts here:
-                    <br>
-                    <textarea rows = "10" cols = "70" name="entry"></textarea>
-                    <br>
-                    <label for="Uname">User Name:</label><br>
-                    <input type="text" id="Uname" name="Uname"><br>
-                    <input type="submit" value="Squeeze!">
-                </form>
+                <div class="leftstuff">
+                    <button class="getQuote">Add Sugar</button><br>
+                    <form class="entry"> 
+                        Squeeze some thoughts here:
+                        <br>
+                        <textarea rows = "10" cols = "60" name="entry"></textarea>
+                        <br>
+                        <label for="Uname">User Name:</label><br>
+                        <input type="text" id="Uname" name="Uname"><br>
+                        <input class="squeeze" type="submit" value="Squeeze">
+                    </form>
+                </div>
+               
+                <div class="displayQuote">Quote will populate here</div>
+                
             </div>
             <div class="col col-50"> 
                 <div class="card">
@@ -34,7 +42,7 @@
                     <h3 class="user">Lemon Ilsa says:</h3>
                     <p>I think a lot of things and sometimes I don't think at all</p>
                 </div>
-                <button class="stir">Stir!</button>
+                <button class="stir">Stir</button>
             </div>
 
             <div class="col col-50"> 
@@ -44,7 +52,8 @@
         </div>
     </div>
     <footer>
-        <h4>Thanks for making lemonade, You're bound to help sweeten somebody's day!</h4>
+        <h4>Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a></h4>
+        
     </footer>
 </body>
 </html>
