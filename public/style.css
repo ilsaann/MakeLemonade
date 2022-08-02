@@ -72,6 +72,32 @@ form {
     border-color: rgb(1, 71, 48);
 }
 
+/* applying font */
+h1, h3, h4, button {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+}
+h4 {
+    color:rgb(1, 71, 48);
+    text-shadow: 1px 1px 1px #f9ea98;
+    padding: 2px;
+    border-radius: 4px;
+    background-color:#f9f2c9;
+    opacity: .8;
+}
+h1 {
+    color:rgb(1, 71, 48);
+    text-shadow: 2px 2px 1px #f9ea98;
+    padding: 2px;
+    border-radius: 4px;
+    background-color:#f9f2c9;
+    opacity: .8;
+}
+p, form {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+}
+
 @media screen and (max-width: 800px){
     .col-50 {
         width: 100%;
