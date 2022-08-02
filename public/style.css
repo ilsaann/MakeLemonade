@@ -1,0 +1,45 @@
+body {
+
+    background-color:#fcf0a9;
+    padding: 1em;
+    
+}
+
+.wrapper {
+    padding: 30px 30px 300px;
+}
+
+.columns {
+    margin: 0 -15px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.col {
+    background:#f9f2c9;
+    margin: 0 15px 30px;
+    padding: 20px;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height:fit-content;
+    border-style: groove;
+    justify-content: center;
+}
+
+.col-50 {
+    width: calc(50% - 30px);
+}
+
+.col-100 {
+    width: calc(100% - 30px);
+}
+
+@media screen and (max-width: 800px){
+    .col-50 {
+        width: 100%;
+    }
+}
