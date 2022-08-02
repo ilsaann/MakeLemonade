@@ -1,6 +1,6 @@
 body {
 
-    background-color:#fcf0a9;
+    background-color:#f9ea98;
     padding: 1em;
     
 }
@@ -15,6 +15,7 @@ body {
     display: flex;
 }
 
+
 .col {
     background:#f9f2c9;
     margin: 0 15px 30px;
@@ -24,9 +25,24 @@ body {
 }
 
 header {
+    background-image: url("/lemonimage.jpg");
+    background-size: cover;
     width: 100%;
     height:fit-content;
     border-style: groove;
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+}
+
+footer {
+    background-image: url("/lemonimage.jpg");
+    background-size: cover;
+    width: 100%;
+    height:fit-content;
+    border-style: groove;
+    border-radius: 5px;
+    display:flex;
     justify-content: center;
 }
 
@@ -34,8 +50,26 @@ header {
     width: calc(50% - 30px);
 }
 
+button {
+    margin: 2em;
+}
+
+form {
+    margin: 2em;
+}
 .col-100 {
+    padding: 2em;
+    display:flex;
+    flex-flow:column;
     width: calc(100% - 30px);
+}
+
+.card {
+    background:#f9ea98;
+    border-radius: .5em;
+    padding: 1em;
+    border-style: solid;
+    border-color: rgb(1, 71, 48);
 }
 
 @media screen and (max-width: 800px){

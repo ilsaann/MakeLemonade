@@ -13,16 +13,23 @@
 
         <div class="columns">
             <div class="col col-100">
-                <button class="qoute">Add Sugar</button>
-                <form>
-                    <label for="entry">Squeeze some thoughts here:</label><br>
-                    <input type="text" id="entry" name="entry"><br>
+                <button class="getQoute">Add Sugar</button><br>
+                <form class="entry"> 
+                    <textarea ros = "5" cols = "10" name="entry" placeholder="Squeeze some thoughts here">   
+                    </textarea>
+                    <br>
                     <label for="Uname">User Name:</label><br>
                     <input type="text" id="Uname" name="Uname"><br>
+                    <input type="submit" value="Submit">
                 </form>
             </div>
             <div class="col col-50"> 
-                here is some content for visual aide
+                <div class="card">
+                    <h3 class="quote">Quote:</h3>
+                    <p>insert the quote</p>
+                    <h3 class="user">Lemon Ilsa says:</h3>
+                    <p>I think a lot of things and sometimes I don't think at all</p>
+                </div>
                 <button class="stir">STIR!</button>
             </div>
 
@@ -31,6 +38,8 @@
             </div>
         </div>
     </div>
-    <footer></footer>
+    <footer>
+        <h4>Thanks for making lemonade, You're bound to help sweeten somebody's day!</h4>
+    </footer>
 </body>
 </html>
