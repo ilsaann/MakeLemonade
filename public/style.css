@@ -60,18 +60,22 @@ form {
 .col-100 {
     padding: 2em;
     display:flex;
+    justify-content:space-around;
     flex-flow:wrap;
     width: calc(100% - 30px);
 }
 .leftstuff{
     width:40%;
-    border-style:solid;
+    /* border-style:solid; */
     margin:2em;
 }
 .displayQuote {
     width:40%;
     margin: 2em;
-    border-style:solid;
+    padding: 2em;
+    display:flex;
+    justify-content: center;
+    /* border-style:solid; */
 }
 
 .card {
