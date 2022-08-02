@@ -15,9 +15,10 @@ $getQuote.click((event) => {
         const n = number[0];
         const Quote = quotes[n].text;
         const Author = quotes[n].author;
-        const $display = $("<p></p>").html(`${Quote}<br>${Author}`);
+        const $display = $("<p></p>").html(
+          `${Quote}<br><em><strong>${Author}</strong></em>`
+        );
         $displayQuote.append($display);
-
         console.log(quotes[n]);
       }
     );
