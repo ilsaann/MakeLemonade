@@ -55,8 +55,10 @@ button {
 }
 
 form {
-    margin: 2em;
+    margin: 1em;
 }
+
+
 .col-100 {
     padding: 2em;
     display:flex;
@@ -133,6 +135,8 @@ footer {
     display:flex;
     justify-content:center;
 }
+
+
 
 @media screen and (max-width: 800px){
     .col-50 {

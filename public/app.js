@@ -24,3 +24,19 @@ $getQuote.click((event) => {
     );
   });
 });
+
+//POST user to database//////////////////////////////////////////////////////////////////////////////
+const tempUser = {};
+const $regName = $("input[name='regName']");
+const $email = $("input[name='email']");
+const $registerForm = $(".register");
+const $regSubmit = $(".lemonMe");
+
+$regSubmit.click(() => {
+  tempUser["username"] = $regName.val();
+  tempUser["email"] = $email.val();
+  console.log(tempUser);
+  //app.post(()=>{}) look to petshop for some quick help on how to write this correctly
+});
+
+//GET STIR//////////////////////////////////////////////////////////////////////////////////////////

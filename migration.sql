@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS journal;
 
-CREATE TABLE user (
+CREATE TABLE users (
     username TEXT,
     email TEXT,
     userID INTEGER PRIMARY KEY

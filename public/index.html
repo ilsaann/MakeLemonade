@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
 
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script defer src="/app.js"></script>
+    <script defer src="app.js"></script>
     <title>MakeLemonade</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
                         Squeeze some thoughts here:
                         <br>
                         <textarea rows = "10" cols = "60" name="entry"></textarea>
-                        <br>
+                        <br> 
                         <label for="Uname">User Name:</label><br>
                         <input type="text" id="Uname" name="Uname"><br>
                         <input class="squeeze" type="submit" value="Squeeze">
@@ -46,8 +46,15 @@
             </div>
 
             <div class="col col-50"> 
-                <p>Hey there, Lil Lemon!<br> We'd love to hear what you think:)</p>
-                <button class="register">Lemon Me</button>
+                <p>Hey there, Lil Lemon!<br> We'd love to hear what you think:)<br> Register Below:</p>
+                <form class="register">
+                    <label for="regName">What should we call you?</label><br>
+                    <input type="text" id="regName" name="regName"><br>
+                    <label for="email">What is your Email?</label><br>
+                    <input type="text" id="email" name="email"><br>
+                    <input class="lemonMe" type="button" value="Lemon Me">
+                </form>
+                
             </div>
         </div>
     </div>
