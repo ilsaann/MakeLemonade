@@ -1,3 +1,8 @@
+//dependencies//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//import { registerUser } from "../server.js";
+
+//const app = express();
 //ADD SUGAR/////////////////////////////////////////////////////////////////////////////////////////////////////////
 const $getQuote = $(".getQuote");
 
@@ -25,7 +30,9 @@ $getQuote.click((event) => {
   });
 });
 
-//POST user to database//////////////////////////////////////////////////////////////////////////////
+//fetch the POST??
+
+//post user data///////////////////
 const tempUser = {};
 const $regName = $("input[name='regName']");
 const $email = $("input[name='email']");
@@ -35,8 +42,23 @@ const $regSubmit = $(".lemonMe");
 $regSubmit.click(() => {
   tempUser["username"] = $regName.val();
   tempUser["email"] = $email.val();
-  console.log(tempUser);
-  //app.post(()=>{}) look to petshop for some quick help on how to write this correctly
-});
+  const unique = new Date().getTime();
+  const ID = unique.toString();
+  tempUser["userID"] = ID.slice(5);
 
+  fetch("/", {
+    method: "POST", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(tempUser),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
 //GET STIR//////////////////////////////////////////////////////////////////////////////////////////

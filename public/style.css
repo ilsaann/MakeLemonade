@@ -36,7 +36,7 @@ header {
 }
 
 footer {
-    background-image: url("/lemonimage.jpg");
+    background-image: url("./lemonimage.jpg");
     background-size: cover;
     width: 100%;
     height:fit-content;
