@@ -35,9 +35,9 @@ app.listen(PORT, () => {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-//POST user to database//////////////////////////////////////////////////////////////////////////////
+//POST new user to database//////////////////////////////////////////////////////////////////////////////
 
-app.post("/", (req, res) => {
+app.post("/user", (req, res) => {
   const newUser = req.body;
   pool
     .query(
@@ -52,4 +52,22 @@ app.post("/", (req, res) => {
     });
 });
 
-//app.post((users)=>{INSERT TO users (username,email,userID) VALUES (tempUser[0], tempUser[1], tempUser[2]) look to petshop for some quick help on how to write this correctly
+//GET check /journal/////////////////////////////////////////////////////////////////////////////////////
+app.post("/journal", (req, res) => {
+  const tempJournal = req.body;
+  pool
+    .query("SELECT userid FROM users WHERE username = $1", [tempJournal.uname])
+    .then((data) => {
+      const userid = data.rows[0].userid;
+      if (userid) {
+        pool.query(
+          "INSERT INTO journal(quote, userentry, userID) VALUES($1,$2,$3)",
+          [tempJournal.quote, tempJournal.userentry, userid]
+        );
+        console.log("entry added to table");
+      } else {
+        res.status(404).send("User Name not found, please register");
+      }
+    });
+});
+//POST new journal entry to database/////////////////////////////////////////////////////////////////////
