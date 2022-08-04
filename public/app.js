@@ -57,12 +57,12 @@ $regSubmit.click(() => {
     body: JSON.stringify(tempUser),
   })
     .then((response) => response.json())
-    .then((data) => {
-      console.log("Success:", data);
-    })
+
     .catch((error) => {
       console.error("Error:", error);
     });
+
+  window.alert("Welcome! You are registered");
 });
 
 //POST journal entry////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -84,11 +84,34 @@ $squeeze.click(() => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(tempJournal),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("success", data);
-    });
+  }).then((response) => {
+    response.json();
+  });
 
-  //check user then check quote
+  //window.alert("you submitted an entry");
+});
+
+//populate entries//////////////////////////////////////////////////////////////////////////////////////////////
+//select stir button and display card
+const $stir = $(".stir");
+const $displaycard = $("#displayCard");
+var journalnumber = [0];
+$stir.click(() => {
+  fetch("/stir")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      const userQuote = data[journalnumber].quote;
+      JSON.parse(userQuote);
+      const userJournal = data[journalnumber].userentry;
+
+      const $card = $("<div></div>").addClass("card");
+      $card.html(`<em>${userQuote}</em><br> ${userJournal}`);
+      $displaycard.append($card);
+    })
+    .then(() => {
+      journalnumber[0]++;
+    });
 });

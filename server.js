@@ -25,12 +25,6 @@ app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
 
-// app.get("/stir", (req, res) => {
-//   pool.query("SELECT * FROM journal").then((result) => {
-//     res.send(result.rows);
-//   });
-// });
-
 //app.post to get users into the user/ journal tables
 
 app.use(express.json());
@@ -52,7 +46,7 @@ app.post("/user", (req, res) => {
     });
 });
 
-//GET check /journal/////////////////////////////////////////////////////////////////////////////////////
+//POST new journal entry to database/////////////////////////////////////////////////////////////////////
 app.post("/journal", (req, res) => {
   const tempJournal = req.body;
   pool
@@ -64,10 +58,19 @@ app.post("/journal", (req, res) => {
           "INSERT INTO journal(quote, userentry, userID) VALUES($1,$2,$3)",
           [tempJournal.quote, tempJournal.userentry, userid]
         );
+        res.send("success");
         console.log("entry added to table");
       } else {
         res.status(404).send("User Name not found, please register");
       }
     });
 });
-//POST new journal entry to database/////////////////////////////////////////////////////////////////////
+
+//populate entries////////////////////////////////////////////////////////////////////////////////
+app.get("/stir", (req, res) => {
+  pool.query("SELECT * FROM journal").then((result) => {
+    const strung = JSON.stringify(result.rows);
+    res.send(result.rows);
+    console.log(result.rows);
+  });
+});
