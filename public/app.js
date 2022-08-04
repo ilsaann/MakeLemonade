@@ -104,11 +104,16 @@ $stir.click(() => {
     .then((data) => {
       console.log(data);
       const userQuote = data[journalnumber].quote;
-      JSON.parse(userQuote);
+      const parsequote = JSON.parse(userQuote);
+      const UQ = parsequote.quote.text;
+      const UA = parsequote.quote.author;
+      console.log(UQ);
       const userJournal = data[journalnumber].userentry;
 
       const $card = $("<div></div>").addClass("card");
-      $card.html(`<em>${userQuote}</em><br> ${userJournal}`);
+      $card.html(
+        `<h3>Quote</h3><br><em><p>${UQ}<br><strong>${UA}</strong></em></p><br><h3>Lemon's Juice</h3><br><p> ${userJournal}</p>`
+      );
       $displaycard.append($card);
     })
     .then(() => {
