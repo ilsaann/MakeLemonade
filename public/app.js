@@ -15,7 +15,7 @@ $getQuote.click((event) => {
     console.log(count);
     //get request for this API generates a random number within the specified range
     $.get(
-      `http://www.randomnumberapi.com/api/v1.0/random?min=0&max=${count}&count=1`,
+      `https://www.randomnumberapi.com/api/v1.0/random?min=0&max=${count}&count=1`,
       (number) => {
         const n = number[0];
         const Quote = quotes[n].text;
